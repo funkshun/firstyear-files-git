@@ -1,0 +1,27 @@
+FOUNDATIONS OF PROGRAMMING (COMP 401H)
+
+[DAY ONE]
+DATE = 23/08/16
+
+Major Course Themes
+-Abstraction
+-Encapsulation
+-Inheritance
+-Polymorphism
+-Delegation
+-Design Patterns
+-Asynchronous Computing
+
+[DAY TWO]
+DATE = 25/08/16
+
+One class or interface per file
+Classes organized into packages
+JavaC compiles to byte code class files
+Class files are run by JRE
+Looks in specified class for public static void main(String[] args)
+
+Lecture mostly focuses on basic Java syntax and structure
+Overview of Eclipse IDE
+
+

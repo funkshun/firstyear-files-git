@@ -1,1 +1,2 @@
-# firstyear-files-git
+# notes-firstyear-git
+Notes from first year classes
