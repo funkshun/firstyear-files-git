@@ -1,2 +1,2 @@
-# notes-firstyear-git
-Notes from first year classes
+# firstyear-files-git
+Git repo for first semester classes
