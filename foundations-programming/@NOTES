@@ -24,4 +24,10 @@ Looks in specified class for public static void main(String[] args)
 Lecture mostly focuses on basic Java syntax and structure
 Overview of Eclipse IDE
 
+[DAY THREE]
+DATE = 30/08/16
 
+Basic Overview of Method Anatomy
+Also discussed operators
+-Ternary Operator (?)
+-- expression ? if_true : if_false

@@ -53,4 +53,38 @@ NOTE: Boron execptions
 
 --HYDROGEN BONDS--
 -Hydrogen bonded to O, N , or F
--Hydrogen bonding
+-Hydrogen bonding is one of the strongest forces for small molecules
+-Hydrogen bonds can bond to negatively charged lone pairs
+-Free electrons bond to hydrogen bonds
+
+[DAY THREE]
+Date = 29/08/16
+
+KINETICS
+-Reaction rates can be determined by monitoring the change in concentration of
+either reactants or products as a funtion of time.
+-Three types of rate
+--Average Rate
+--Instantaneous Rate
+--Initial Rate
+-Apearance and disappearance rate must take into account the stochiometric
+relationship between the predicting and reacting molecules
+-Unique Rates are determined by the stochimetric ratio
+{Unique Rate
+(1/a)*delta[A]/deltat}
+
+    --Factors Affecting Reaction Rate--
+-Increasing temperature almost always increases reaction rate
+-Increasing concentration of reactant almost always increases reaction rate
+-Catalysts lower activation energy and increase reaction rates
+
+[DAY FOUR]
+Date = 31/08/16
+
+INTEGRATED RATE LAWS
+Zero
+At = -kt + A0
+First
+ln(At) = -kt + ln(A0)
+Second
+1/At = kt + 1/A0
