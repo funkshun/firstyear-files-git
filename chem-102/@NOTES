@@ -88,3 +88,18 @@ First
 ln(At) = -kt + ln(A0)
 Second
 1/At = kt + 1/A0
+
+[DAY FIVE]
+Date = 02/09/16
+
+--COLLISION THEORy__
+-Gas phase
+-A + B | products
+-Collision orientation helps determine likelihood of formation
+{Arrhenius Equations
+k=Ae^-Ea/RT
+f=e^-Ea/RT
+k=A*f}
+
+ln(k1/k2)=(-Ea/R)*((1/T1)-(1/T2))
+
