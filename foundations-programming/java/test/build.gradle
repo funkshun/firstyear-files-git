@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+mainClassName = "hello.Hello"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+}
+
+	
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+jar{
+	manifest{
+		attributes(
+
+	'Main-Class': 'hello.Hello'
+		)	
+	}
+}
