@@ -1,0 +1,37 @@
+/* Gradle build file template
+ * Change both main class attributes to define main class for JAR
+ * Copy into top level directory of project
+ */
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+//mainClassName = "hello.Hello"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+    compile files('libs/a6-solution-compiled.jar')
+		testCompile group: 'junit', name: 'junit', version '4.+'
+}
+
+	
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+jar{
+	from sourceSets.main.allJava
+
+	manifest{
+		attributes(
+
+	//'Main-Class': 'hello.Hello'
+		)	
+	}
+}
