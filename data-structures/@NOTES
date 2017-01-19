@@ -1,0 +1,107 @@
+COMPUTER SCIENCE 410-001: DATA STRUCTURES
+
+-Class Overview-
+
+Abstraction vs. Efficiency 
+
+Focus on Data Structures from two perspectives
+-Software Engineer - choosing the appropriate data structure for a task
+-Computer Scientist - implementing a data structure in the best way from for the
+given tak
+
+-Administrative-
+
+Homepage link on cs.unc.edu
+-This will be where all assignments will be provided
+
+-Introduction to the Course-
+
+Topics to Cover{
+    Linear Data Structures: stacks and queues{
+        implement using arrays and linked lists
+    }
+
+    Big O efficiency notation{
+        As regards searching and sorting
+    }
+
+    Priority Queue{
+        Insert items and at an point extract most important piece
+        implement using heaps
+        Heap sort
+    }
+
+    Sorting{
+        quicksort, radix, bucket, external
+    }
+
+    Dynamic Dictionary{
+        binary search tree
+        balanced BSTs
+        hash table
+    }
+
+    Graphs{
+        representation, top sort, shortest paths
+    }
+}
+
+Introduction to Stacks{
+    First In, Last Out
+    Push and Pop
+    Widely Used, see runtime stacks
+
+    Syntax{
+        import java.util.Stack; //import
+        Stack<Type> name = new Stack<Type>; //declare new stack
+        name.push(value); //push new value
+        name.pop(); //retrieve last pushed value
+    }
+
+    Roots of Inefficiency{
+        Function Calls amd Interaction with the runtime stack:
+            Can be reduced with smart compilers to translate to inline
+        Generalization:
+            By allowing for many data types, the default implementation of the
+            java stack introduces many necessary procedures that increase
+            runtime
+    }
+}
+
+Abstractions{
+    Tradeoff between complexity and efficiency
+
+    Stack{
+        Last in First Out
+        input = *.push()
+        output = *.pop()
+        boolean:
+            *.isEmpty() // checks if empty
+            *.isFull() // checks if full
+        *.top() or *.peek() // returns next value without removing it from the
+        structure 
+        implementation{
+            
+        }
+    }
+    Queue{
+        First in First Out
+        input = *.enqueue()
+        output = *.dequeue() 
+        boolean:
+            *.isEmpty() // checks if empty
+            *.isFull() // checks if full
+        *.front() or *.peek() // returns next value without removing it from the
+        structure
+        implementation{
+            
+        }
+    }
+
+    Respect all specifications in the interface
+    Preconditions should be specified for each of the methods:
+        e.g. !isFull() etc.
+
+    
+
+}

@@ -1,0 +1,53 @@
+COMPUTER ORGANIZATION
+
+Administrative{
+
+    Course Objectives{
+        Translation to machine language
+        Hardware/Software Interface
+        Factors of  program performance
+        Structure of processors
+        C programming
+    }
+
+    Grade Structure{
+        Homework -> 25
+        Lab Assignment -> 25
+        Quizzes -> 15
+        Midterm -> 15
+        Final -> 20
+    }
+
+    Prerequisite knowledge{
+        basic types: integer, string literal, etc.
+        basic arithmetic
+        data constructs
+        logic operators and program flow
+    }
+
+    Mistakes{
+        Skipping Lectures
+        Not reading book
+        Not spending time on homework
+        Not asking questions
+        Not discussing among peers
+    }
+}
+
+Performance{
+    Defining Performance{
+        
+    }
+    Performance Measures[
+        
+    ]
+    How to Improve Performance{
+        
+    }
+    Performance Pitfalls{
+        
+    }
+    Examples{
+        
+    }
+}
