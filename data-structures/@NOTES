@@ -81,7 +81,7 @@ Abstractions{
         *.top() or *.peek() // returns next value without removing it from the
         structure 
         implementation{
-            
+            See stackImp.java
         }
     }
     Queue{
@@ -97,6 +97,13 @@ Abstractions{
             
         }
     }
+    Deque{
+        Linear Data Structure
+        Allows for stack interaction from both top and bottom{
+            Top = .push() .pop()
+            Bottom = .inject() .eject()
+        }
+    }
 
     Respect all specifications in the interface
     Preconditions should be specified for each of the methods:
@@ -105,3 +112,5 @@ Abstractions{
     
 
 }
+
+
