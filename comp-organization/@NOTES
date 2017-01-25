@@ -51,3 +51,24 @@ Performance{
         
     }
 }
+
+Manufacturing ICs{
+    Process{
+        Silicon from Sand
+        Cut into wafers
+        Numerous processing steps to cut in many dies per wafer
+        Remove faulty dies
+        Bond Die to package
+        Test Packaged Die
+    }
+
+    Increases size increases cost non linearlly due to increase in probability
+    of defects
+
+    Formulas{
+        Cost per die = Cost per wafer/(Dies per wafer * yield)
+        Dies per wafer = wafer_area/die_area
+        Yield = 1 / ((1+(Defects_per_area * Die_area / 2))^2)
+    }
+
+}
