@@ -1,7 +1,4 @@
-
-
-
-
+//package proj1;
 
 public class Stack<T> {
     private int size;
@@ -59,7 +56,12 @@ public class Stack<T> {
         }
     }
     
-    public static void main(String[] args) {
+    public int getMembers(){
+        return this.currentSize;
+    }
+    
+    //testing
+    /*public static void main(String[] args) {
         Stack<Integer> s1 = new Stack<Integer>(10);
         s1.push(1);
         s1.push(2);
@@ -68,7 +70,7 @@ public class Stack<T> {
         System.out.println(s1.peek());
         System.out.println(s1.pop());
         System.out.println(s1.pop());
-    }
+    }*/
     
 
     

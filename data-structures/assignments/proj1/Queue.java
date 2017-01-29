@@ -1,3 +1,5 @@
+//package proj1;
+
 public class Queue<T> {
     private T[] arr;
     private int pointer;
@@ -23,15 +25,16 @@ public class Queue<T> {
 
     public T peek(){
         if(isEmpty()){
-            return null;
+            throw new RuntimeException("No Values in Queue"); 
         }
         return arr[pointer];
     }
 
     public T dequeue(){
         if(isEmpty()){
-            return null;
+            throw new RuntimeException("No Values in Queue");
         }
+        members--;
         T tmp = arr[pointer];
         pointer = (pointer + 1) % size;
         return tmp;
@@ -39,44 +42,52 @@ public class Queue<T> {
 
     public void enqueue(T element){
         if(isFull()){
-            return;
+            throw new RuntimeException("Queue is Full");
         }
         arr[rear] = element;
         rear = (rear + 1) % size;
         members++;
     }
-
-    public static void main(String[] args) {
+    
+    public int getMembers(){
+        return this.members;
+    }
+    
+    //testing
+    /*public static void main(String[] args) {
         Queue<Integer> q1 = new Queue<Integer>(10);
         q1.enqueue(1);
         q1.enqueue(2);
         q1.enqueue(3);
         q1.enqueue(4);
         q1.enqueue(5);
-        q1.enqueue(7);
-        q1.enqueue(8);
-        q1.enqueue(9);
-        q1.enqueue(10);
-        q1.enqueue(11);
-        q1.enqueue(12);
-        q1.enqueue(13);
-        q1.enqueue(14);
-        q1.enqueue(15);
         System.out.println(q1.dequeue());
         System.out.println(q1.peek());
         System.out.println(q1.dequeue());
         System.out.println(q1.dequeue());
         System.out.println(q1.dequeue());
         System.out.println(q1.dequeue());
+        q1.enqueue(7);
+        q1.enqueue(8);
+        q1.enqueue(9);
+        q1.enqueue(10);
+        q1.enqueue(11);
+        System.out.println(q1.dequeue());
+        System.out.println(q1.peek());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        q1.enqueue(12);
+        q1.enqueue(13);
+        q1.enqueue(14);
+        q1.enqueue(15);
+        q1.enqueue(16);
         System.out.println(q1.dequeue());
         System.out.println(q1.dequeue());
         System.out.println(q1.dequeue());
         System.out.println(q1.dequeue());
         System.out.println(q1.dequeue());
-        System.out.println(q1.dequeue());
-        System.out.println(q1.dequeue());
-        System.out.println(q1.dequeue());
-        System.out.println(q1.dequeue());
-    }
+    }*/
     
 }
