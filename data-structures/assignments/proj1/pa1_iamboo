@@ -1,0 +1,305 @@
+//package proj1;
+
+public class Queue<T> {
+    private T[] arr;
+    private int pointer;
+    private int rear;
+    private int members;
+    private int size;
+
+    public Queue(int capacity){
+        arr = (T[]) new Object[capacity];
+        pointer = 0;
+        rear = 0;
+        members = 0;
+        size = capacity;
+    }
+
+    public boolean isEmpty(){
+        return members == 0; 
+    }
+
+    public boolean isFull(){
+        return members == size;
+    }
+
+    public T peek(){
+        if(isEmpty()){
+            throw new RuntimeException("No Values in Queue"); 
+        }
+        return arr[pointer];
+    }
+
+    public T dequeue(){
+        if(isEmpty()){
+            throw new RuntimeException("No Values in Queue");
+        }
+        members--;
+        T tmp = arr[pointer];
+        pointer = (pointer + 1) % size;
+        return tmp;
+    }
+
+    public void enqueue(T element){
+        if(isFull()){
+            throw new RuntimeException("Queue is Full");
+        }
+        arr[rear] = element;
+        rear = (rear + 1) % size;
+        members++;
+    }
+    
+    public int getMembers(){
+        return this.members;
+    }
+    
+    //testing
+    /*public static void main(String[] args) {
+        Queue<Integer> q1 = new Queue<Integer>(10);
+        q1.enqueue(1);
+        q1.enqueue(2);
+        q1.enqueue(3);
+        q1.enqueue(4);
+        q1.enqueue(5);
+        System.out.println(q1.dequeue());
+        System.out.println(q1.peek());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        q1.enqueue(7);
+        q1.enqueue(8);
+        q1.enqueue(9);
+        q1.enqueue(10);
+        q1.enqueue(11);
+        System.out.println(q1.dequeue());
+        System.out.println(q1.peek());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        q1.enqueue(12);
+        q1.enqueue(13);
+        q1.enqueue(14);
+        q1.enqueue(15);
+        q1.enqueue(16);
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+        System.out.println(q1.dequeue());
+    }*/
+    
+}
+//package proj1;
+
+public class Stack<T> {
+    private int size;
+    private int currentSize;
+    private T[] arr;
+    private Node<T> top;
+
+    public Stack(int capacity){
+        this.size = capacity;
+        arr = (T[]) new Object[size];
+        top = null;
+        currentSize =0;
+    }
+
+    public boolean isEmpty(){
+        return currentSize == 0;
+    }
+
+    public boolean isFull(){
+        return !(currentSize == size);
+    }
+    
+    public T peek(){
+        if(!(isEmpty())){
+            return top.getData();
+        }
+        else{
+            return null;
+        }
+    }
+
+    public T pop(){
+        if(!(isEmpty())){
+            T tmp = top.getData();
+            this.top = top.getNext();
+            currentSize--;
+            return tmp;
+        }
+        else{
+            return null;
+        }
+    }
+
+    public void push(T element){
+        if(isEmpty()){
+            top = new Node<T>(element);
+            currentSize++;
+            return;
+        }
+        else{
+            Node<T> tmp = top;
+            top = new Node<T>(element);
+            top.setNext(tmp);
+            currentSize++;
+        }
+    }
+    
+    public int getMembers(){
+        return this.currentSize;
+    }
+    
+    //testing
+    /*public static void main(String[] args) {
+        Stack<Integer> s1 = new Stack<Integer>(10);
+        s1.push(1);
+        s1.push(2);
+        s1.push(3);
+        System.out.println(s1.pop());
+        System.out.println(s1.peek());
+        System.out.println(s1.pop());
+        System.out.println(s1.pop());
+    }*/
+    
+
+    
+}
+
+class Node<T>{
+    private T data;
+    private Node<T> next;
+
+    public Node(T d, Node<T> n){
+        data = d;
+        next = n;
+    }
+
+    public Node(T d){
+        data = d;
+        next = null;
+    }
+
+    public T getData(){
+        return data;
+    }
+
+    public Node<T> getNext(){
+        return next;
+    }
+    public void setNext(Node<T> n){
+        next = n;
+    }
+
+}
+
+
+
+//package proj1;
+
+public class VipQueue<T>{
+
+    private int size;
+    private Stack<T> vips;
+    private Queue<T> norms;
+
+    public VipQueue(int capacity){
+        size = capacity;
+        vips = new Stack<T>(size);
+        norms = new Queue<T>(size);
+
+    }
+
+    public boolean isEmpty(){
+        if(vips.isEmpty() && norms.isEmpty()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean isFull(){
+        if(vips.isFull() && norms.isFull()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public T peek(){
+        if(isEmpty()){
+            throw new RuntimeException("No elements in queue");
+        }
+        else if(!(vips.isEmpty())){
+            return vips.peek();
+        }
+        else{
+            return norms.peek();
+        }
+    }
+
+    public T dequeue(){
+        if(isEmpty()){
+            throw new RuntimeException("No elements in queue");
+        }
+        else if(!(vips.isEmpty())){
+            return vips.pop();
+        }
+        else{
+            return norms.dequeue();
+        }
+    }
+
+    public void enqueue(T element){
+        if(isFull()){
+            throw new RuntimeException("Abstraction is Full");
+        }
+        else if(norms.isFull()){
+            throw new RuntimeException("Abstraction is Full");
+        }
+        else{
+            norms.enqueue(element);
+        }
+    }
+
+    public void vipEnqueue(T element){
+        if(isFull()){
+            throw new RuntimeException("Abstraction is Full");
+        }
+        //else if(vips.isFull()){
+        //    throw new RuntimeException("Abstraction is Full - sub");
+        //}
+        else{
+            vips.push(element);
+        }
+    }
+
+    public int count(){
+        return vips.getMembers() + norms.getMembers();
+    }
+    
+    //testing - throws exception to test catching
+    /*public static void main(String[] args) {
+        VipQueue<Integer> v1 = new VipQueue<Integer>(10);
+        v1.enqueue(1);
+        v1.enqueue(2);
+        v1.enqueue(3);
+        v1.enqueue(4);
+        v1.enqueue(5);
+        System.out.println(v1.dequeue());
+        System.out.println(v1.dequeue());
+        v1.vipEnqueue(10);
+        System.out.println(v1.dequeue());
+        System.out.println(v1.dequeue());
+        System.out.println(v1.dequeue());
+        System.out.println(v1.dequeue());
+        System.out.println(v1.dequeue());
+    }*/
+
+} 
+
