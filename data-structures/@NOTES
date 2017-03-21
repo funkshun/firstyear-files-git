@@ -109,8 +109,38 @@ Abstractions{
     Preconditions should be specified for each of the methods:
         e.g. !isFull() etc.
 
-    
+    Dynamic Dictionary{
+        
+        Supported Operations:
+            insert(k, v) //Theta bound of Theta Height
+            find(k) -> d //Average height should be log(n)
+            remove(k)
+        Implement using a Binary Search Tree:
+            Every root is > left subtree and < right subtree
+        Hashtable:
+            
+        All Operations should be implemented recursively 
+        
+        AVL BST{
+            maintains the height of each node
+            defines a balance condition:
+                for each node, the height of its 
+                subtrees may differ by at most one
+            if and operation violates the balance condition, rotation is
+            performed
+
+            Supported Operations:
+                Identical as above, but before returning, rebalance, and
+                recompute height.
+            
+            Balancing Cases:
+                Left, Left
+                Right, Right
+                Right, Left
+                Left, Right
+
+        }
+    }      
 
 }
-
 
