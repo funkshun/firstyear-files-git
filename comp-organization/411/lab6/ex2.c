@@ -3,7 +3,6 @@
 int average(int red, int green, int blue, int max);
 int main(int argc, char *argv[]){
     int i, j, val, max, height, width, x1, y1, x2, y2;
-    char magic[3];
     scanf("%d%d%d%d", &x1, &x2, &y1, &y2);
     scanf("%d%d", &width, &height);
     scanf("%d", &max);
@@ -11,7 +10,7 @@ int main(int argc, char *argv[]){
     for(i = 0; i < height; i++){
         for(j = 0; j < width; j++){
             scanf("%d", &val);
-            if(i >= x1 && i <= x2 && j >= y1 && j <= y2){
+            if(j >= x1 && j <= x2 && i >= y1 && i <= y2){
                 printf("%d\n", val);
             }
         }
