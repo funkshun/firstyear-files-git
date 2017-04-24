@@ -1,20 +1,23 @@
-#include <stdio.h> 
+#include <stdio.h>
 
-int average(int red, int green, int blue, int max);
-int main(int argc, char *argv[]){
-    int i, r, g, b, max, height, width;
-    char magic[3];
-    scanf("%s", &magic);
-    scanf("%d%d", &width, &height);
-    scanf("%d", &max);
-    printf("P2\n%d\n%d\n%d\n", width, height, max);
-    for(i = 0; i < width * height; i++){
-        scanf("%d%d%d", &r, &g, &b);
-        printf("%d\n", average(r, g, b, max));
+int a_to_i(char* str);
+int main(int argc, char *argv[])
+{
+    int returnVal = 1;
+    while(returnVal != 0){
+        char* temp;
+        fgets(temp, 20, stdin);
+        returnVal = a_to_i(temp);
+        printf("%d\n", returnVal);
     }
     return 0;
 }
-
-int average(int red, int green, int blue, int max){
-    return ((red * 30 + green * 59 + blue * 11) * 255) / (100 * max);
+int a_to_i(char* str){
+    int i, count;
+    count = 0;
+    while((*str >= '0') && (*str <= '9')){
+        count = count * 10 + (*str - '0');
+        str++;
+    }
+    return count;
 }
